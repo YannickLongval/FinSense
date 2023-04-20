@@ -5,7 +5,7 @@ This model uses Long Short Term Memory (LSTM) networks to classify the positivit
 <br/><br/> 
 [https://intellipaat.com/blog/what-is-lstm/#:~:text='%20LSTM%20stands%20for%20long%20short,especially%20in%20sequence%20prediction%20problems.](https://intellipaat.com/blog/what-is-lstm/#:~:text='%20LSTM%20stands%20for%20long%20short,especially%20in%20sequence%20prediction%20problems.)
 <br/><br/>
-The dataset for thi project can be found here: 
+The dataset for this project can be found here: 
 <br/><br/>
 [https://www.kaggle.com/code/khotijahs1/nlp-financial-news-sentiment-analysis/input?select=all-data.csv](https://www.kaggle.com/code/khotijahs1/nlp-financial-news-sentiment-analysis/input?select=all-data.csv)
 <br/><br/>
