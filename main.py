@@ -15,5 +15,15 @@ model = tf.keras.models.load_model('models/finsense_NSA_finance_model')
 headlines:list[str] = scraper.scrape(["h2", "h3"])
 predictions:list[str] = model.predict(np.array(headlines))
 
-print(headlines)
-print(predictions)
+positive = []
+negative = []
+for i in range(len(predictions)):
+    if predictions[i] < -0.4:
+        negative.append(headlines[i])
+    if predictions[i] > 0.4:
+        positive.append(headlines[i])
+
+print("POSITIVE:")
+print("\n".join(positive))
+print("\nNEGATIVE:")
+print("\n".join(negative))
