@@ -68,9 +68,7 @@ model = tf.keras.Sequential([
     encoder,
     tf.keras.layers.Embedding(
         input_dim=len(encoder.get_vocabulary()),
-        output_dim=64,
-        # Use masking to handle the variable sequence lengths
-        mask_zero=True),
+        output_dim=64),
     tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64)),
     tf.keras.layers.Dense(64, activation='relu'),
     tf.keras.layers.Dense(1)
@@ -85,6 +83,9 @@ model.compile(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
 history = model.fit(tf_train, epochs=5,
                     validation_data=tf_test,
                     validation_steps=10)
+
+# save the model to be used in the future
+model.save('models/finsense_NSA_finance_model')
 
 # print accuracy/loss of classifier on test data
 test_loss, test_acc = model.evaluate(tf_test)
