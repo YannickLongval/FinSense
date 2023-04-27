@@ -5,24 +5,17 @@ article is positive or negative.
 '''
 
 import pandas as pd
-import numpy as np
 import tensorflow as tf
-# from tqdm import tqdm
-# from keras.preprocessing.text import Tokenizer
-# tqdm.pandas(desc="progress-bar")
-# from gensim.models import Doc2Vec
-# from sklearn import utils
 from sklearn.model_selection import train_test_split
-# from keras.preprocessing.sequence import pad_sequences
-# import gensim
-# from sklearn.linear_model import LogisticRegression
-# from gensim.models.doc2vec import TaggedDocument
-# import re
-# import seaborn as sns
 import matplotlib.pyplot as plt
 
-# this function plots the accuracy and loss for the training and testing data
-def plot_graphs(history, metric):
+"""Plot the preformance of the model on training/testing data
+
+Args:
+    history: the performance data of the model
+    metric (string): the metric to be plotted
+"""
+def plot_graphs(history, metric:str) -> None:
   plt.plot(history.history[metric])
   plt.plot(history.history['val_'+metric], '')
   plt.xlabel("Epochs")
