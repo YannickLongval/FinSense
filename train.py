@@ -39,8 +39,8 @@ train, test = train_test_split(df, test_size=0.1, random_state=69)
 var_target_train, var_target_test = train.pop('sentiment'), test.pop('sentiment')
 
 # creating the tf.data.Datasets
-tf_train:tf.data.Dataset = tf.data.Dataset.from_tensor_slices((train.values, var_target_train.values))
-tf_test:tf.data.Dataset = tf.data.Dataset.from_tensor_slices((test.values, var_target_test.values))
+tf_train:tf.data.Dataset = tf.data.Dataset.from_tensor_slices((train.values.flatten(), var_target_train.values))
+tf_test:tf.data.Dataset = tf.data.Dataset.from_tensor_slices((test.values.flatten(), var_target_test.values))
 
 # setting buffer and batch sizes based on amount of data (not as much so sizes are smaller)
 BUFFER_SIZE:int = 500
